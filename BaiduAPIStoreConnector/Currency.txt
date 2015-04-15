@@ -1,0 +1,12 @@
+CNY(Chinese Yuan)人民币    
+FRF(French Franc)法国法郎 
+HKD(HongKong Dollar)港元   
+CHF(德文schweizer Franken)瑞士法郎    
+USD(United States Dollar)美元    
+CAD(Canadian Dollar)加拿大元   
+GBP(GreatBritain Pound)英镑   
+NLG(NetherLandish Guilder)荷兰盾  
+DEM(德文Deutsche Mark)德国马克    
+BEF(Belgischer Franc)比利时法郎    
+JPY(Japanese Yen)日元 
+AUD(Australian Dollar)澳大利亚元
