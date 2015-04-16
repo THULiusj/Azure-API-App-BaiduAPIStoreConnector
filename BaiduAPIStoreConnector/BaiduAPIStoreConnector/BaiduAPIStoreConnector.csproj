@@ -101,18 +101,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AQIController.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />
-    <Compile Include="Controllers\GetIDInfoController.cs" />
+    <Compile Include="Controllers\IDInfoController.cs" />
     <Compile Include="Controllers\MobilePhoneController.cs" />
+    <Compile Include="Controllers\TemplateAPIController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CityAQI.cs" />
-    <Compile Include="Models\CityInfo.cs" />
-    <Compile Include="Models\CityWeather.cs" />
-    <Compile Include="Models\IDCard.cs" />
-    <Compile Include="Models\IntlCurrency.cs" />
-    <Compile Include="Models\TeleNumInfo.cs" />
+    <Compile Include="Models\ResponseData.cs" />
+    <Compile Include="Models\ResponseInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,21 +11,14 @@ using System.Web.Http;
 
 namespace BaiduAPIStoreConnector.Controllers
 {
-    public class CurrencyController : ApiController
+    public class CurrencyController : TemplateAPIController
     {
-        HttpClient client = new HttpClient();
-
-        public CurrencyController()
-        {
-            client.BaseAddress = new Uri(WebConfigurationManager.AppSettings["BaiduAPIStoreUrl"]);
-        }
+        [HttpGet]
+        [ActionName("GetCurrency")]
         public async Task<RetDataCurrency> Get(string fromCurrency, string toCurrency, string amount)
         {
-            IntlCurrency currencycontainer = null;
-            HttpResponseMessage response = await client.GetAsync(string.Format("currency?fromCurrency={0}&toCurrency={1}&amount={2}", fromCurrency, toCurrency, amount));
-            string responsebody = await response.Content.ReadAsStringAsync();
-            currencycontainer = JsonConvert.DeserializeObject<IntlCurrency>(responsebody);
-            return currencycontainer.retData;
+            string completeUrl = string.Format("currency?fromCurrency={0}&toCurrency={1}&amount={2}", fromCurrency, toCurrency, amount);
+            return await InnerExecute<RetDataCurrency>(completeUrl);
         }
     }
 }

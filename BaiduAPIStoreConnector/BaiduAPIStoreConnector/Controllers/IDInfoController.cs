@@ -11,14 +11,14 @@ using System.Web.Http;
 
 namespace BaiduAPIStoreConnector.Controllers
 {
-    public class MobilePhoneController : TemplateAPIController
+    public class IDInfoController : TemplateAPIController
     {
         [HttpGet]
-        [ActionName("GetMobilePhone")]
-        public async Task<RetDataTeleNum> Get(string tel)
+        [ActionName("GetIDInfo")]
+        public async Task<RetDataIDCardDetail> Get(string Id)
         {
-            string completeUrl = string.Format("mobilephone?tel={0}", tel);
-            return await InnerExecute<RetDataTeleNum>(completeUrl);
+            string completeUrl = string.Format("icardinfo?id={0}", Id);
+            return await InnerExecute<RetDataIDCardDetail>(completeUrl);
         }
     }
 }

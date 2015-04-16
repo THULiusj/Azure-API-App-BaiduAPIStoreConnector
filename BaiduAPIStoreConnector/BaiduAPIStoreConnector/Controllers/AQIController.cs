@@ -11,21 +11,14 @@ using System.Web.Http;
 
 namespace BaiduAPIStoreConnector.Controllers
 {
-    public class AQIController : ApiController
+    public class AQIController : TemplateAPIController
     {
-        HttpClient client = new HttpClient();
-
-        public AQIController()
-        {
-            client.BaseAddress = new Uri(WebConfigurationManager.AppSettings["BaiduAPIStoreUrl"]);
-        }
+        [HttpGet]
+        [ActionName("GetAQI")]
         public async Task<RetDataAQI> Get(string CityName)
         {
-            CityAQI cityaqicontainer = null;
-            HttpResponseMessage response = await client.GetAsync(string.Format("aqi?city={0}", CityName));
-            string responsebody = await response.Content.ReadAsStringAsync();
-            cityaqicontainer = JsonConvert.DeserializeObject<CityAQI>(responsebody);
-            return cityaqicontainer.retData;
+            string completeUrl = string.Format("aqi?city={0}", CityName);
+            return await InnerExecute<RetDataAQI>(completeUrl);
         }
     }
 }
